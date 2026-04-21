@@ -6,12 +6,10 @@ phases:
       python: 3.8
     commands:
       - echo Installing dependencies...
-      - pip install -r requirements.txt
       - pip install pytest
 
   pre_build:
     commands:
-      - echo start prebuild and end it
       - mkdir -p reports
 
   build:
@@ -22,11 +20,6 @@ phases:
   post_build:
     commands:
       - echo Build completed successfully.
-
-artifacts:
-  files:
-    - "**/*"
-  base-directory: .
 
 reports:
   pytest_reports:
